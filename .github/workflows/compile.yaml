@@ -1,0 +1,17 @@
+name: compile C++
+
+on:
+  push:
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+
+      - name: Install g++
+        run: sudo apt install gcc
+
+      - name: Compile
+        run: g++ file.cpp
